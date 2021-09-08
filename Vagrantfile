@@ -15,16 +15,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :alpha do |alpha|
     alpha.vm.box = "kalilinux/rolling"
-    alpha.gui = true
-    alpha.memory="4096"
     alpha.vm.network "private_network", :type => 'dhcp', :virtualbox__intnet=>true, :adapter => 2, :ip=>"192.160.0.1"
     alpha.vm.hostname = "Kali"
   end
 
   config.vm.define :beta do |beta|
     beta.vm.box = "ubuntu/bionic64"
-    beta.gui = true
-    beta.memory="4096"
     beta.vm.network "private_network", :type => 'dhcp',  :virtualbox__intnet=>true, :adapter => 2, :ip=>"192.160.0.2"
     beta.vm.hostname = "ubuntu18LTS"
   end
